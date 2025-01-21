@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:we_chat/screens/auth/login_screen.dart';
 import 'package:we_chat/screens/home_screen.dart';
 
+late Size mq;
 void main() {
   runApp(const MyApp());
 }
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
