@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:we_chat/screens/home_screen.dart';
 
@@ -14,7 +15,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    Future.delayed(const Duration(seconds: 2), () {
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      SystemChrome.setSystemUIOverlayStyle(
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent));
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (_) => const HomeScreen()));
     });
@@ -39,8 +43,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Positioned(
               bottom: mq.height * .15,
               width: mq.width,
-              child: Text(
-                'STAY CONNECTED ANYTIME',
+              child: const Text(
+                'STAY CONNECTED, ANYTIME, ANYWHERE',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16, color: Colors.black, letterSpacing: .5),
